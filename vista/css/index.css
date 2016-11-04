@@ -1,0 +1,22 @@
+/* Porcentajes del login*/
+div#padreLogin {
+  height: 100vh;
+}
+div#padreLogin div#registro {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: #00f;
+  outline: 1px solid #000;
+  margin-top: -300px;
+  transition: 0.5s all;
+  z-index: 1;
+}
+div#padreLogin div#login {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: #ffa500;
+  outline: 1px solid #f00;
+  z-index: 2;
+}
