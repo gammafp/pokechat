@@ -18,17 +18,18 @@
     <title>Pokéchat</title>
 </head>
 
-<body ng-controller="login" ng-cloak>
+<body ng-cloak>
 
-    <div layout="column" layout-align="center center" id="padreLogin">
+    <div ng-controller="login" layout="column" layout-align="center center" id="padreLogin">
+        <!-- Login usuarios registrados -->
         <div id="login">
-            <!-- Login usuarios registrados -->
-            <div>
+            <div ng-style="mostrarLogin">
                 <input type="text" placeholder="Usuario">
                 <input type="password" placeholder="Contraseña">
 
                 <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
-                    <md-button class="md-raised md-primary">Iniciar</md-button>
+                    <!--  Hay que desactivar el boton cuando se esté registrando #Mirar luego#-->
+                    <md-button class="md-raised md-primary" >Iniciar</md-button>
                 </section>
 
             </div>
