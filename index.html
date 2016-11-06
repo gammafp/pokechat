@@ -1,6 +1,7 @@
 <html lang="es" ng-app="miApp">
 <!--  Prueba -->
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Angular Material style sheet -->
 	<link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
@@ -9,22 +10,40 @@
 	<script src="./bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="./bower_components/angular-messages/angular-messages.min.js"></script>
-
 	<script src="./bower_components/angular-material/angular-material.min.js"></script>
 	<!--<link rel="stylesheet" href="./bower_components/normalize/normalize.css">-->
 	<link rel="stylesheet" href="./vista/css/index.css">
+    <link rel="shortcut icon" href="./vista/imagenes/favicon.ico">
+    <title>Pokéchat</title>
 </head>
 
 <body ng-controller="login" ng-cloak>
 
 	<div layout="column" layout-align="center center" id="padreLogin">
 		<div id="login">
+			<!-- Login usuarios registrados -->
+			<div>
+				<input type="text" placeholder="Usuario">
+				<input type="password" placeholder="Contraseña">
+
+                <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+                    <md-button class="md-raised md-primary" >Iniciar</md-button>
+                </section>
+
+			</div>
+            <!-- Boton despliegue de registro de usuarios-->
 			<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-				<md-button ng-click="botonRegistro()" class="md-raised md-warn" >{{tipoRegistro}} ;)</md-button>
+				<md-button ng-click="botonRegistro()" class="md-raised md-warn" >{{tipoRegistro}}</md-button>
 			</section>
 		</div>
 		<div id="registro" ng-style="mostrarRegistro">
+			<!--Registro usuarios-->
+            <input type="text" placeholder="Usuario">
+            <input type="password" placeholder="Contraseña">
 
+            <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+                <md-button class="md-raised md-primary" >Crear</md-button>
+            </section>
 		</div>
 	</div>
 

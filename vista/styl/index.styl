@@ -2,25 +2,53 @@
 
 /* Porcentajes del login*/
 ancho = 300px
-alto = 300px
+alto = 200px
+
+body
+    background-image: url("../imagenes/IMAGEN_LOGIN-compressor.png")
+    background-size: 100%
+    background-repeat: no-repeat
+    background-color: #358242
 
 cajaLoginRegistro()
     width: ancho
     height: alto
     position: relative
+
 div#padreLogin
     height: 100vh
     // margin-top: 100px;
+    div#login div
+        border-bottom: 1px solid grey
+        padding-bottom: 15px
+
+    div#login, div#registro
+        cajaLoginRegistro()
+        padding: 10px
+        text-align: center
+        background-color: white
+        width: 300px
+        height: 250px
+        margin-top: -(alto)
+        transition: .5s all
+        border-radius: 5px
+
     div#registro
-        cajaLoginRegistro()
-        background-color: blue
-        outline: 1px solid negro 
-        margin-top: -(alto) 
-        transition: .5s all   
+        overflow: hidden
+        border-radius: 0 0 5px 5px
+        height: 175px
         z-index: 1
+
     div#login
-        cajaLoginRegistro()
-        background-color: orange
-        // position: relative
-        outline 1px solid red
+        border-radius: 5px 5px 0 0
         z-index: 2
+
+input
+    margin: 10px
+    padding: 5px
+    border-radius: 5px
+    width: 225px
+
+.md-warn
+    width: 200px
+    margin-top: 15px

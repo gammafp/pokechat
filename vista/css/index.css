@@ -1,22 +1,48 @@
 /* Porcentajes del login*/
+body {
+  background-image: url("../imagenes/IMAGEN_LOGIN-compressor.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #358242;
+}
 div#padreLogin {
   height: 100vh;
 }
+div#padreLogin div#login div {
+  border-bottom: 1px solid #808080;
+  padding-bottom: 15px;
+}
+div#padreLogin div#login,
 div#padreLogin div#registro {
   width: 300px;
-  height: 300px;
+  height: 200px;
   position: relative;
-  background-color: #00f;
-  outline: 1px solid #000;
-  margin-top: -300px;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+  width: 300px;
+  height: 250px;
+  margin-top: -200px;
   transition: 0.5s all;
+  border-radius: 5px;
+}
+div#padreLogin div#registro {
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+  height: 175px;
   z-index: 1;
 }
 div#padreLogin div#login {
-  width: 300px;
-  height: 300px;
-  position: relative;
-  background-color: #ffa500;
-  outline: 1px solid #f00;
+  border-radius: 5px 5px 0 0;
   z-index: 2;
+}
+input {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 225px;
+}
+.md-warn {
+  width: 200px;
+  margin-top: 15px;
 }
