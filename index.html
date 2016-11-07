@@ -1,6 +1,6 @@
 <html lang="es" ng-app="miApp">
 <!--  Prueba -->
-
+<!--  Borrame: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,29 +23,55 @@
     <div ng-controller="login" layout="column" layout-align="center center" id="padreLogin">
         <!-- Login usuarios registrados -->
         <div id="login">
-            <div ng-style="mostrarLogin">
-                <input type="text" placeholder="Usuario">
-                <input type="password" placeholder="Contraseña">
+            <div class="loginBorder">
+                <form ng-style="mostrarLogin" class="" action="index.html" method="post" name="login" maxlength="50">
 
-                <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
-                    <!--  Hay que desactivar el boton cuando se esté registrando #Mirar luego#-->
-                    <md-button class="md-raised md-primary" >Iniciar</md-button>
-                </section>
+                    <input type="text" placeholder="Usuario" name="loginUsuario" required>
+                    <input type="password" placeholder="Contraseña" name="loginContrasena" required>
 
+                    <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+                        <!--  Hay que desactivar el boton cuando se esté registrando #Mirar luego#-->
+                        <md-button class="md-raised md-primary" name="loginBoton">Iniciar</md-button>
+                    </section>
+                    <!--Mensajes de error-->
+                    <div ng-messages="login.loginUsuario.$error" role="alert">
+                        <div ng-message="required">Tienes que tener un nombre de usuario</div>
+                        <div ng-message="maxlength">¿No crees que es un nombre muy largo?</div>
+                        <div ng-message="fail">Esta no es el nombre de usuario</div>
+                    </div>
+
+                    <div ng-messages="login.loginContrasena.$error" role="alert">
+                        <div ng-message="required">Tienes que introducir una contraseña</div>
+                        <div ng-message="fail">Esta no es la contraseña</div>
+                    </div>
+                </form>
             </div>
             <!-- Boton despliegue de registro de usuarios-->
             <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
                 <md-button ng-click="botonRegistro()" class="md-raised md-warn">{{tipoRegistro}}</md-button>
             </section>
         </div>
+        <!--Registro usuarios-->
         <div id="registro" ng-style="mostrarRegistro">
-            <!--Registro usuarios-->
-            <input type="text" placeholder="Usuario">
-            <input type="password" placeholder="Contraseña">
+            <form class="" action="index.html" method="post" name="registro">
 
-            <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
-                <md-button class="md-raised md-primary">Crear</md-button>
-            </section>
+                <input type="text" placeholder="Usuario" name="registroUsuario" maxlength="50" required>
+                <input type="password" placeholder="Contraseña" name="registroContrasena" required>
+
+                <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+                    <md-button class="md-raised md-primary" name="registroBoton">Crear</md-button>
+                </section>
+                <!--Mensajes de error-->
+                <div ng-messages="registro.registroUsuario$error" role="alert">
+                    <div ng-message="required">Tienes que tener un nombre de usuario</div>
+                    <div ng-message="maxlength">¿No crees que es un nombre muy largo?</div>
+                    <div ng-message="fail">Esta no es el nombre de usuario</div>
+                </div>
+                <div ng-messages="registro.registroContrasena.$error" role="alert">
+                    <div ng-message="required">Tienes que introducir una contraseña</div>
+                    <div ng-message="fail">Esta no es la contraseña</div>
+                </div>
+            </form>
         </div>
     </div>
 

@@ -1,0 +1,21 @@
+body {
+  background-color: #808080;
+}
+input {
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+}
+div#chat {
+  height: 100%;
+}
+.md-theme {
+  background-color: #808080;
+}
+footer div {
+  margin: 5px;
+  border-top: 1px solid #808080;
+}
+textarea {
+  resize: none;
+}

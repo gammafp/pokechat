@@ -1,9 +1,11 @@
 (function() {
-    var app = angular.module("miApp", ["ngMaterial"]);
+    var app = angular.module("miApp", ["ngMaterial", "ngMessages"]);
     app.controller("login", login);
 
     login.$inject = ["$scope"];
     function login($scope) {
+        //$scope.login.loginUsuario.$setValidity('fail', false);
+
         var suitch = true;
         $scope.tipoRegistro = "Registrate ;)";
         $scope.botonRegistro = function() {

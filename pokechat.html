@@ -1,4 +1,5 @@
 <html lang="es" ng-app="miApp">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,44 @@
 </head>
 
 <body ng-controller="pokechat" ng-cloak>
-    {{prueba}}
+
+    <div class="emulador" flex="70">
+
+    </div>
+
+    <div id="chat" layout="column">
+        <section layout="row" flex>
+            <md-sidenav flex="25" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+                <!-- No tengo idea de porque no funciona :S el background-color -->
+                <md-toolbar class="md-theme" layout-padding>
+                    <img src="./vista/imagenes/VERSION_POKEMON-compressor.jpg" alt="" />
+                </md-toolbar>
+
+                <md-content flex layout="column" layout-padding>
+
+                    <!--Incio del mensaje -->
+                    <md-card  md-whiteframe="10">
+                        <h3>Naabs<!--{{nombre usuario}}--></h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim at est tempus accumsan. Vestibulum quis justo id arcu scelerisque laoreet et sed nisl. In at viverra nulla. Aliquam porta ultricies pharetra. Duis cursus fringilla ipsum metus.
+                            <!--{{mensaje usuario}}-->
+                        </p>
+                    </md-card>
+                    <!--Fin del mensaje -->
+
+                </md-content>
+
+                <footer>
+                    <div class="md-padding" layout="column">
+                        <form>
+                            <textarea name="mensaje" rows="6" cols="30" maxlength="255" placeholder="Tienes 255 caracteres para enviar mensajes a otros entrenadores =D"></textarea>
+                        </form>
+                    </div>
+                </footer>
+
+            </md-sidenav>
+        </section>
+    </div>
 
     <script src="./vista/scripts/pokechat.js"></script>
 </body>
