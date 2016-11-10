@@ -1,6 +1,6 @@
+<!--  HAY QUE HACER LA GESTION DE LOGIN -->
 <html lang="es" ng-app="miApp">
 <!--  Prueba -->
-<!--  Borrame: http://devernay.free.fr/hacks/chip8/C8TECH10.HTM-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,9 @@
     <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="./bower_components/angular-material/angular-material.min.js"></script>
     <!--<link rel="stylesheet" href="./bower_components/normalize/normalize.css">-->
+    <script src="./bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+    <script src="./bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
     <link rel="stylesheet" href="./vista/css/index.css">
     <link rel="shortcut icon" href="./vista/imagenes/favicon.ico">
     <title>Pokéchat</title>
@@ -24,23 +27,23 @@
         <!-- Login usuarios registrados -->
         <div id="login">
             <div class="loginBorder">
-                <form ng-style="mostrarLogin" class="" action="index.html" method="post" name="login" maxlength="50">
+                <form ng-style="mostrarLogin" ng-submit="LoginFn(login)" name="Login" maxlength="50">
 
-                    <input type="text" placeholder="Usuario" name="loginUsuario" required>
-                    <input type="password" placeholder="Contraseña" name="loginContrasena" required>
+                    <input type="text" placeholder="Usuario" ng-model="login.user" name="User" required>
+                    <input type="password" placeholder="Contraseña" ng-model="login.password" name="Password" required>
 
                     <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
                         <!--  Hay que desactivar el boton cuando se esté registrando #Mirar luego#-->
-                        <md-button class="md-raised md-primary" name="loginBoton">Iniciar</md-button>
+                        <md-button class="md-raised md-primary" type="submit" name="loginBoton">Iniciar</md-button>
                     </section>
                     <!--Mensajes de error-->
-                    <div ng-messages="login.loginUsuario.$error" role="alert">
-                        <div ng-message="required">Tienes que tener un nombre de usuario</div>
+                    <div ng-messages="Login.User.$error" role="alert">
+                        <div ng-message="required">Tienes que tener un nombre de usuario  {{Registro.User.$error | json}}</div>
                         <div ng-message="maxlength">¿No crees que es un nombre muy largo?</div>
                         <div ng-message="fail">Esta no es el nombre de usuario</div>
                     </div>
 
-                    <div ng-messages="login.loginContrasena.$error" role="alert">
+                    <div ng-messages="Login.Password.$error" role="alert">
                         <div ng-message="required">Tienes que introducir una contraseña</div>
                         <div ng-message="fail">Esta no es la contraseña</div>
                     </div>
@@ -53,21 +56,21 @@
         </div>
         <!--Registro usuarios-->
         <div id="registro" ng-style="mostrarRegistro">
-            <form class="" action="index.html" method="post" name="registro">
+            <form ng-submit="RegisterFn(register)" name="Registro">
 
-                <input type="text" placeholder="Usuario" name="registroUsuario" maxlength="50" required>
-                <input type="password" placeholder="Contraseña" name="registroContrasena" required>
+                <input type="text" placeholder="Usuario" name="User" ng-model="register.user" maxlength="50" required>
+                <input type="password" placeholder="Contraseña" name="Password" ng-model="register.password" required>
 
                 <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
-                    <md-button class="md-raised md-primary" name="registroBoton">Crear</md-button>
+                    <md-button class="md-raised md-primary" type="submit" name="registroBoton">Crear</md-button>
                 </section>
                 <!--Mensajes de error-->
-                <div ng-messages="registro.registroUsuario$error" role="alert">
+                <div ng-messages="Registro.User.$error" role="alert">
                     <div ng-message="required">Tienes que tener un nombre de usuario</div>
                     <div ng-message="maxlength">¿No crees que es un nombre muy largo?</div>
                     <div ng-message="fail">Esta no es el nombre de usuario</div>
                 </div>
-                <div ng-messages="registro.registroContrasena.$error" role="alert">
+                <div ng-messages="registro.Password.$error" role="alert">
                     <div ng-message="required">Tienes que introducir una contraseña</div>
                     <div ng-message="fail">Esta no es la contraseña</div>
                 </div>
