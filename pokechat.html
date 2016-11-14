@@ -12,51 +12,79 @@
     <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="./bower_components/angular-material/angular-material.min.js"></script>
     <!--<link rel="stylesheet" href="./bower_components/normalize/normalize.css">-->
+    <script src="./bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+    <script src="./bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
     <link rel="stylesheet" href="./vista/css/pokechat.css">
     <link rel="shortcut icon" href="./vista/imagenes/favicon.ico">
+    <!--  Scripts emu -->
+    <script src="./js/WebContent/zip.js"></script>
+
     <title>Pokéchat</title>
 </head>
 
 <body ng-controller="pokechat" ng-cloak>
+    <!-- Contenedor del emulador -->
+    <div class="" layout="row" layout-align="center center">
 
-    <div class="emulador" flex="70">
+        <div class="emulador" flex>
+
+            <div class="juego">
+                <div layout="row" layout-sm="column" layout-align="center">
+                    <md-progress-circular id="progreso" md-mode="ideterminate"></md-progress-circular>
+                </div>
+                <canvas id="screen" width="840" height="530"></canvas>
+            </div>
+
+            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+                <md-button class="md-raised">Controles</md-button>
+            </section>
+
+            <div class="controles" layout="row" layout-sm="column" layout-align="center center">
+                <p>
+                    Seccion de controles
+                </p>
+            </div>
+
+        </div>
+        <!-- Contenedor del chat -->
+        <div id="chat" layout="column">
+            <section layout="row" flex>
+                <md-sidenav class="md-sidenav-right" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+                    <!-- No tengo idea de porque no funciona :S el background-color -->
+                    <md-toolbar class="md-theme">
+                        <img src="./vista/imagenes/VERSION_POKEMON-compressor.jpg" alt="" />
+                    </md-toolbar>
+
+                    <md-content flex layout="column" layout-padding>
+                        <div ng-repeat="chat in todosChat" ng-cloack>
+                            <!--Incio del mensaje -->
+                            <md-card md-whiteframe="10">
+                                <h3 ng-class="chat.user_name == soyYo ? 'media-heading soyYo' : 'media-heading'">{{chat.user_name}}</h3>
+                                <p>{{chat.mensaje}}</p>
+                            </md-card>
+                            <!--Fin del mensaje -->
+                        </div>
+
+                    </md-content>
+
+                    <footer>
+                        <div layout="column" layout-padding>
+                            <form ng-submit="nuevoMensaje(chat)">
+                                <textarea ng-model="chat.mensaje" name="mensaje" rows="2" cols="30" maxlength="255" placeholder="Tienes 255 caracteres para enviar mensajes a otros entrenadores =D"></textarea>
+                                <section layout="row" layout-sm="column" layout-align="right" layout-wrap>
+                                    <md-button type="submit" class="md-raised md-warn">enviar</md-button>
+                                </section>
+                            </form>
+                        </div>
+                    </footer>
+
+                </md-sidenav>
+            </section>
+        </div>
 
     </div>
-
-    <div id="chat" layout="column">
-        <section layout="row" flex>
-            <md-sidenav flex="25" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
-                <!-- No tengo idea de porque no funciona :S el background-color -->
-                <md-toolbar class="md-theme" layout-padding>
-                    <img src="./vista/imagenes/VERSION_POKEMON-compressor.jpg" alt="" />
-                </md-toolbar>
-
-                <md-content flex layout="column" layout-padding>
-
-                    <!--Incio del mensaje -->
-                    <md-card  md-whiteframe="10">
-                        <h3>Naabs<!--{{nombre usuario}}--></h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim at est tempus accumsan. Vestibulum quis justo id arcu scelerisque laoreet et sed nisl. In at viverra nulla. Aliquam porta ultricies pharetra. Duis cursus fringilla ipsum metus.
-                            <!--{{mensaje usuario}}-->
-                        </p>
-                    </md-card>
-                    <!--Fin del mensaje -->
-
-                </md-content>
-
-                <footer>
-                    <div class="md-padding" layout="column">
-                        <form>
-                            <textarea name="mensaje" rows="6" cols="30" maxlength="255" placeholder="Tienes 255 caracteres para enviar mensajes a otros entrenadores =D"></textarea>
-                        </form>
-                    </div>
-                </footer>
-
-            </md-sidenav>
-        </section>
-    </div>
-
+    <script src="./js/cargadorGamma.js"></script>
     <script src="./vista/scripts/pokechat.js"></script>
 </body>
 

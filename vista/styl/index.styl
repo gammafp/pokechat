@@ -2,7 +2,7 @@
 
 /* Porcentajes del login*/
 ancho = 300px
-alto = 200px
+alto = 230px
 
 body
     background-image: url("../imagenes/IMAGEN_LOGIN-compressor.png")
@@ -12,7 +12,7 @@ body
 
 cajaLoginRegistro()
     width: ancho
-    height: alto
+    min-height: alto
     position: relative
 
 div#padreLogin
@@ -49,6 +49,14 @@ input
     border-radius: 5px
     width: 225px
 
-.md-warn
-    width: 200px
-    margin-top: 15px
+.alertaExito, .alertaFallo
+    width: 225px
+    border-radius: 5px
+    margin: 5px
+    padding: 5px
+
+.alertaExito
+    background-color: rgba(12, 232, 102, 0.5);
+
+.alertaFallo
+    background-color: rgba(255, 0, 0, 0.5);

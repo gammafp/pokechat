@@ -1,21 +1,37 @@
 body {
-  background-color: #808080;
-}
-input {
-  padding: 5px;
-  border-radius: 5px;
-  width: 150px;
+  background-color: #183452;
 }
 div#chat {
   height: 100%;
 }
-.md-theme {
-  background-color: #808080;
-}
-footer div {
-  margin: 5px;
-  border-top: 1px solid #808080;
-}
 textarea {
+  margin-left: 8px;
+  padding: 5px;
+  border-radius: 5px;
   resize: none;
+}
+md-content {
+  background-color: #d9dbd8 !important;
+}
+md-progress-circular {
+  margin-top: 25%;
+}
+md-card {
+  overflow: inherit;
+}
+.controles {
+  border-radius: 5px;
+  width: 530px;
+  height: 150px;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.juego {
+  width: 840px;
+  height: 530px;
+  background-color: rgba(0,0,0,0.5);
+  margin: 0 auto;
+  margin-top: 15px;
 }

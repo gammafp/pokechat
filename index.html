@@ -33,20 +33,13 @@
                     <input type="password" placeholder="Contraseña" ng-model="login.password" name="Password" required>
 
                     <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
-                        <!--  Hay que desactivar el boton cuando se esté registrando #Mirar luego#-->
                         <md-button class="md-raised md-primary" type="submit" name="loginBoton">Iniciar</md-button>
                     </section>
-                    <!--Mensajes de error-->
-                    <div ng-messages="Login.User.$error" role="alert">
-                        <div ng-message="required">Tienes que tener un nombre de usuario  {{Registro.User.$error | json}}</div>
-                        <div ng-message="maxlength">¿No crees que es un nombre muy largo?</div>
-                        <div ng-message="fail">Esta no es el nombre de usuario</div>
+                    <!--Alertas-->
+                    <div class="alertaFallo" ng-if="alertaL.mostrar">
+                        <strong>¡Cuidado, accion inefectiva!</strong>{{alertaL.mensaje}}
                     </div>
 
-                    <div ng-messages="Login.Password.$error" role="alert">
-                        <div ng-message="required">Tienes que introducir una contraseña</div>
-                        <div ng-message="fail">Esta no es la contraseña</div>
-                    </div>
                 </form>
             </div>
             <!-- Boton despliegue de registro de usuarios-->
@@ -64,15 +57,13 @@
                 <section layout="row" layout-sm="column" layout-align="end center" layout-wrap>
                     <md-button class="md-raised md-primary" type="submit" name="registroBoton">Crear</md-button>
                 </section>
-                <!--Mensajes de error-->
-                <div ng-messages="Registro.User.$error" role="alert">
-                    <div ng-message="required">Tienes que tener un nombre de usuario</div>
-                    <div ng-message="maxlength">¿No crees que es un nombre muy largo?</div>
-                    <div ng-message="fail">Esta no es el nombre de usuario</div>
+                <!--  Alertas -->
+                <div class="alertaExito" ng-if="correctoR.mostrar">
+                   <strong>¡Lo atrapaste!</strong> {{correctoR.mensaje}}
                 </div>
-                <div ng-messages="registro.Password.$error" role="alert">
-                    <div ng-message="required">Tienes que introducir una contraseña</div>
-                    <div ng-message="fail">Esta no es la contraseña</div>
+
+                <div class="alertaFallo" ng-if="alertaR.mostrar">
+                   <strong>¡Lo has perdido, ya ha sido capturado!</strong> {{alertaR.mensaje}}
                 </div>
             </form>
         </div>

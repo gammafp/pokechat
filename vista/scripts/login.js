@@ -21,7 +21,7 @@
             if (bool) {
                 store.remove("token");
             } else {
-                window.location = baseUrl+"pokechat.html";
+                window.location = "http://localhost:8003/"+"pokechat.html";
             }
         }
     }]);
