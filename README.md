@@ -2,6 +2,7 @@
 
 pokechat
 Esta es la versión beta de pokechat.
+
 Pokechat es un chat donde se puede jugar a pokemon esmeralda.
 
 La gracia de todo esto es poder crear una cuenta de usuario, jugar un poco y guardar partida en un servidor.
