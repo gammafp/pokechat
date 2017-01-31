@@ -1,6 +1,5 @@
 # pokechat
 
-pokechat
 Esta es la versión beta de pokechat.
 
 Pokechat es un chat donde se puede jugar a pokemon esmeralda.
@@ -13,4 +12,6 @@ Pokechat cuenta con un chat para conversar con otros usuarios que esten jugando 
 
 **Tecnologías usadas: HTML, CSS, Javascript, AngularJS, MaterialAngular, PHP, MySQL.**
 
-Pokechat es de libre uso y modificación siempre respetando GPL V3.
+**Pokechat es solo para aprendizaje.**
+
+Pokechat es de libre uso y modificación  siempre respetando GPL V3.
