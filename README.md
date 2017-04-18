@@ -14,4 +14,5 @@ Pokechat cuenta con un chat para conversar con otros usuarios que esten jugando 
 
 **Pokechat es solo para aprendizaje.**
 
-Pokechat es de libre uso y modificación  siempre respetando GPL V3.
+Capturas: 
+  ![captura](http://i.imgur.com/Iwmypja.png)
